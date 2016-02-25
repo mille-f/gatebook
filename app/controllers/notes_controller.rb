@@ -3,5 +3,7 @@ class NotesController < ApplicationController
   end
 
   def create
+    @title = params[:title]
+    @content = params[:content]
   end
 end
