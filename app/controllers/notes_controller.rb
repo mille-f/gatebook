@@ -7,7 +7,7 @@ class NotesController < ApplicationController
     @note.title = params[:title]
     @note.content = params[:content]
     @note.save
-    redirect_to noe_path(@note.id)
+    redirect_to note_path(@note.id)
   end
 
   def index
@@ -29,4 +29,11 @@ class NotesController < ApplicationController
     @note.save
     redirect_to note_path(@note.id)
   end
+
+  def destroy
+    @note = Note.find(params[:id])
+    @note.destroy
+    redirect_to notes_path
+  end
+
 end
